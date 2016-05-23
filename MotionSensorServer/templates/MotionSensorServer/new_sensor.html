@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}New Sensor{% endblock %}
+
+{% block content %}
+<H1>New Sensor</H1>
+<div class="form">
+    <form method="Post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}
