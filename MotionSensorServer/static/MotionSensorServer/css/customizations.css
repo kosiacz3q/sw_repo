@@ -1,0 +1,29 @@
+.c_href {
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    background-color: #46b8da;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 30%;
+}
+
+.c_href:hover {
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    background-color: #2b669a;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    width: 30%;
+}
