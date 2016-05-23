@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.decorators.http import require_http_methods
@@ -36,7 +36,7 @@ def new_sensor(request):
             try:
                 my_new_sensor = form.save()
                 UserSensor.objects.get_or_create(user=request.user, sensor=my_new_sensor)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect(reverse('MotionSensorServer:sensors'))
             except:
                 pass
     return render_to_response('MotionSensorServer/new_sensor.html', {'form': SensorForm()},
@@ -45,7 +45,9 @@ def new_sensor(request):
 
 @login_required()
 def get_sensors(request):
+
     user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
+
     return render_to_response('MotionSensorServer/sensors.html', {
         "items": user_sensors
     }, RequestContext(request))
@@ -71,4 +73,17 @@ def get_detections_per_sensor(request, sensor_id):
 def remove_sensor(request, sensor_id):
     sensor_r = get_object_or_404(Sensor, pk=sensor_id)
     sensor_r.delete()
+    return HttpResponseRedirect(reverse('MotionSensorServer:sensors'))
+
+@login_required
+def switch_sensor_state(request, sensor_id):
+    sensor_r = get_object_or_404(Sensor, pk=sensor_id)
+
+    if sensor_r.activated:
+        sensor_r.activated = False
+    else:
+        sensor_r.activated = True
+
+    sensor_r.save()
+
     return HttpResponseRedirect(reverse('MotionSensorServer:sensors'))
