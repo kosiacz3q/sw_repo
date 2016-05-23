@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7c249418-b589-4c6c-bb1a-d9e3971691db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MotionSensorServer/templates/base.html" afterPath="$PROJECT_DIR$/MotionSensorServer/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html" afterPath="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html" afterPath="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MotionSensorServer/urls.py" afterPath="$PROJECT_DIR$/MotionSensorServer/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MotionSensorServer/views.py" afterPath="$PROJECT_DIR$/MotionSensorServer/views.py" />
     </list>
     <ignored path="sw_repo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,18 +43,48 @@
       <file leaf-file-name="new_sensor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/registration/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sensors.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/sensors.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MotionSensorServer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.8141593">
+              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -81,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22181146">
-              <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+            <state vertical-scroll-proportion="-8.75">
+              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -95,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/MotionSensorServer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -120,17 +153,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html" />
         <option value="$PROJECT_DIR$/sw_repo/settings.py" />
         <option value="$PROJECT_DIR$/sw_repo/urls.py" />
         <option value="$PROJECT_DIR$/MotionSensorServer/templates/registration/logout.html" />
         <option value="$PROJECT_DIR$/MotionSensorServer/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html" />
         <option value="$PROJECT_DIR$/MotionSensorServer/models.py" />
-        <option value="$PROJECT_DIR$/MotionSensorServer/views.py" />
         <option value="$PROJECT_DIR$/MotionSensorServer/admin.py" />
+        <option value="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html" />
+        <option value="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html" />
         <option value="$PROJECT_DIR$/MotionSensorServer/urls.py" />
+        <option value="$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/sensors.html" />
         <option value="$PROJECT_DIR$/MotionSensorServer/templates/base.html" />
+        <option value="$PROJECT_DIR$/MotionSensorServer/views.py" />
       </list>
     </option>
   </component>
@@ -599,22 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69316083">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sw_repo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50442475">
@@ -641,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MotionSensorServer/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -656,6 +666,22 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,31 +695,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MotionSensorServer/views.py">
+    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/new_sensor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MotionSensorServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/MotionSensorServer/sensors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MotionSensorServer/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22181146">
-          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MotionSensorServer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8141593">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ def reading(request, custom_id, is_motion_detected):
             sensor_reading.save()
     pass
 
-@login_required
+@login_required()
 def new_sensor(request):
     if request.method == 'POST':
         form = SensorForm(request.POST)
@@ -39,3 +39,12 @@ def new_sensor(request):
                 pass
     return render_to_response('MotionSensorServer/new_sensor.html', {'form': SensorForm()},
                               context_instance=RequestContext(request))
+
+@login_required()
+def get_sensors(request):
+    user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
+    # user_sensors = UserSensor.objects.filter(user_exact=request.user)
+    # sensors = Sensor.objects.filter(user__exact=request.user)
+    return render_to_response('MotionSensorServer/sensors.html', {
+        "items": user_sensors
+    }, RequestContext(request))

@@ -1,76 +1,80 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     {% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Motion Sensor Server{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'MotionSensorServer/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'MotionSensorServer/css/bootstrap.min.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{% static 'MotionSensorServer/js/bootstrap.min.js' %}"></script>
-        <div id="content">
+</head>
+<body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'MotionSensorServer/js/bootstrap.min.js' %}"></script>
+<div id="content">
 
-                <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" href="{% url 'MotionSensorServer:index' %}">Home</a>
-            {% if user.is_authenticated %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'MotionSensorServer:index' %}">Home</a>
+                {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'MotionSensorServer:new_sensor' %}">Add Sensor</a>
-            {% endif %}
-        </div>
+                <a class="navbar-brand" href="{% url 'MotionSensorServer:sensors' %}">My Sensors</a>
+                {% endif %}
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           {% if user.is_authenticated %}
-            <p class="navbar-text">
-                Hello
-                {{ user.username }}
-            </p>
-            {% else %}
-             <p class="navbar-text">Hello</p>
-            {% endif %}
-          <ul class="nav navbar-nav navbar-right">
-              {% if user.is_authenticated %}
-                <li><a href="{% url 'auth_logout' %}">Logout</a></li>
-                <li><a href="{% url 'auth_password_change' %}">Password change</a></li>
-              {% else %}
-                <li><a href="{% url 'auth_login' %}">Login</a></li>
-              {% endif %}
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                {% if user.is_authenticated %}
+                <p class="navbar-text">
+                    Hello
+                    {{ user.username }}
+                </p>
+                {% else %}
+                <p class="navbar-text">Hello</p>
+                {% endif %}
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+                    <li><a href="{% url 'auth_password_change' %}">Password change</a></li>
+                    {% else %}
+                    <li><a href="{% url 'auth_login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
 
-            {% block content %}
-            {% endblock %}
-        </div>
+    {% block content %}
+    {% endblock %}
+</div>
 
-        <div id="footer">
-            {% block footer %}
-                <hr />
-            <div class="text-center">
-                <p>Authors: Sebastian Pawlak, Łukasz Kosiak</p>
-            </div>
-            {% endblock %}
-        </div>
-  </body>
+<div id="footer">
+    {% block footer %}
+    <hr/>
+    <div class="text-center">
+        <p>Authors: Sebastian Pawlak, Łukasz Kosiak</p>
+    </div>
+    {% endblock %}
+</div>
+</body>
 </html>
