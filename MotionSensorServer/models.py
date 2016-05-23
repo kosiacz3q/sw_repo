@@ -20,12 +20,6 @@ class UserSensor(models.Model):
     user = models.ForeignKey(User)
     sensor = models.ForeignKey(Sensor)
 
-# def create_user_profile(sender, instance, created, **kwargs):
-#     if created:
-#         _, created = UserSensors.objects.get_or_create(user=sender)
-#
-#
-# post_save.connect(create_user_profile, sender=User)
 
 class SensorForm(ModelForm):
     class Meta:
