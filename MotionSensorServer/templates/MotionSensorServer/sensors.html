@@ -21,8 +21,14 @@
         <td>{{ item.activated }}</td>
         <td>
             <a href="{% url 'MotionSensorServer:remove_sensor' item.id %}"
-               onclick="return confirm('Are you sure you wont to delete this sensor?')">Delete</a>
+               onclick="return confirm('Are you sure you want to delete this sensor?')">Delete</a>
             <a href="{% url 'MotionSensorServer:detections_sensor' item.id %}">Detections</a>
+
+            {% if item.activated %}
+                <a href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}" onclick="return confirm('Are you sure you want to deactivate this sensor?')">Deactivate</a>
+            {% else %}
+                <a href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}" onclick="return confirm('Are you sure you want to activate this sensor?')">Activate</a>
+            {% endif %}
         </td>
     </tr>
     {% endfor %}
