@@ -7,6 +7,7 @@ IPAddress ip(192, 168, 0, 177); //if dhcp fail
 
 EthernetClient client;
 
+int sensor_id = 1;
 int sensor = 6;
 int sensor_value = 0;
 String data;
@@ -22,9 +23,7 @@ void setup() {
 	}
 	
 	delay(1000);
-	Serial.println("Connecting in progress");
-	
-	data = "";
+	Serial.println("Connecting in progress");	
 }
 
 void loop(){
@@ -45,6 +44,15 @@ void loop(){
            }       
 
   if(sensor_value>0){
+  
+		data = "";
+        data += "sensor_id=";
+        data += (sensor_id);
+		data += "&"
+		data += "is_motion_detected=";
+		data += (sensor_value);
+		
+		
 	if (client.connect(server,80)) {
 		client.println("POST /motion/reading/ HTTP/1.1"); 
 		client.println("Host: xxx.xxx.xxx"); // SERVER ADDRESS HERE TOO
