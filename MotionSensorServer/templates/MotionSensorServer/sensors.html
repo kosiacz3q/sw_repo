@@ -19,7 +19,8 @@
         <td>{{ item.custom_id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.activated }}</td>
-        <td><a href="{% url 'MotionSensorServer:remove_sensor' item.id %}">Delete</a></td>
+        <td><a href="{% url 'MotionSensorServer:remove_sensor' item.id %}"
+               onclick="return confirm('Are you sure you wont to delete this sensor?')">Delete</a></td>
     </tr>
     {% endfor %}
 </table>

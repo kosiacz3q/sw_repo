@@ -63,6 +63,6 @@ def get_detections(request):
 
 @login_required
 def remove_sensor(request, sensor_id):
-    sensor_r = get_object_or_404(Sensor, sensor__pk=sensor_id)
+    sensor_r = get_object_or_404(Sensor, pk=sensor_id)
     sensor_r.delete()
     return HttpResponseRedirect(reverse('MotionSensorServer:sensors'))
