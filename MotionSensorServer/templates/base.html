@@ -36,7 +36,8 @@
                 <a class="navbar-brand" href="{% url 'MotionSensorServer:index' %}">Home</a>
                 {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'MotionSensorServer:new_sensor' %}">Add Sensor</a>
-                <a class="navbar-brand" href="{% url 'MotionSensorServer:sensors' %}">My Sensors</a>
+                <a class="navbar-brand" href="{% url 'MotionSensorServer:sensors' %}">Sensors</a>
+                <a class="navbar-brand" href="{% url 'MotionSensorServer:detections' %}">Detections</a>
                 {% endif %}
             </div>
 

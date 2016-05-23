@@ -49,3 +49,13 @@ def get_sensors(request):
     return render_to_response('MotionSensorServer/sensors.html', {
         "items": user_sensors
     }, RequestContext(request))
+
+
+@login_required()
+def get_detections(request):
+    user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
+    detections = SensorReading.objects.order_by("date")
+    detections = [i for i in detections if i.sensor in user_sensors]
+    return render_to_response('MotionSensorServer/detections.html', {
+        "items": detections
+    }, RequestContext(request))
