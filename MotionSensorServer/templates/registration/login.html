@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+          <H1>Login</H1>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Username</label>
+                <br>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <br>
+                {{ form.password }}
+            </div>
+            <input type="submit" value="Log in" />
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

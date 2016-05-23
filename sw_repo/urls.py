@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^', include('MotionSensorServer.urls', namespace='MotionSensorServer'), name='main'),
     url(r'^admin/', admin.site.urls),
     url(r'^motion/', include('MotionSensorServer.urls', namespace='MotionSensorServer'), name='main'),
+    url(r'^accounts/', include('registration.urls'))
 ]

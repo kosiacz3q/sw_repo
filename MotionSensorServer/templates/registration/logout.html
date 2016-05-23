@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <H2>Logout successful </H2>
+    <p>
+        You have successfully logged out.
+        <a href="/accounts/login">Login again</a>.
+    </p>
+</div>
+{% endblock %}
