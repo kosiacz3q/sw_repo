@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^motion/new_sensor/', views.new_sensor, name='new_sensor'),
     url(r'^motion/sensors/(?P<sensor_id>[0-9]+)/remove/', views.remove_sensor, name='remove_sensor'),
     url(r'^motion/sensors/', views.get_sensors, name='sensors'),
-    url(r'^motion/detections/', views.get_detections, name='detections'),
-    url(r'^motion/detections/', views.get_detections, name='detections')
+    url(r'^motion/detections/(?P<sensor_id>[0-9]+)', views.get_detections_per_sensor, name='detections_sensor'),
+    url(r'^motion/detections/', views.get_detections_per_user, name='detections_user')
 ]

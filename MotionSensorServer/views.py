@@ -52,7 +52,7 @@ def get_sensors(request):
 
 
 @login_required()
-def get_detections(request):
+def get_detections_per_user(request):
     user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
     detections = SensorReading.objects.order_by("date")
     detections = [i for i in detections if i.sensor in user_sensors]
@@ -60,6 +60,12 @@ def get_detections(request):
         "items": detections
     }, RequestContext(request))
 
+@login_required()
+def get_detections_per_sensor(request, sensor_id):
+    detections = SensorReading.objects.filter(sensor__exact=sensor_id).order_by("date")
+    return render_to_response('MotionSensorServer/detections.html', {
+        "items": detections
+    }, RequestContext(request))
 
 @login_required
 def remove_sensor(request, sensor_id):
