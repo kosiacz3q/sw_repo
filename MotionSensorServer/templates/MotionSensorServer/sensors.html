@@ -12,12 +12,14 @@
         <th>ID</th>
         <th>Name</th>
         <th>Activated</th>
+        <th>Actions</th>
     </tr>
     {% for item in items %}
     <tr>
         <td>{{ item.custom_id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.activated }}</td>
+        <td><a href="{% url 'MotionSensorServer:remove_sensor' item.id %}">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
