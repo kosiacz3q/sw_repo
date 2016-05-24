@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.decorators.http import require_http_methods
@@ -46,7 +46,8 @@ def reading(request, custom_id, is_motion_detected):
                     detected=motion_detected)
 
                 sensor_reading.save()
-    pass
+
+    return HttpResponse('')
 
 
 @login_required()
