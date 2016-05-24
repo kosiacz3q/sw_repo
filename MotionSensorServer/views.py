@@ -18,7 +18,6 @@ def index(request):
 @require_http_methods(["POST"])
 @csrf_exempt
 def reading(request, custom_id, is_motion_detected):
-
     motion_detected = (is_motion_detected == '1')
 
     if Sensor.objects.filter(custom_id=custom_id).exists():
@@ -67,7 +66,6 @@ def new_sensor(request):
 
 @login_required()
 def get_sensors(request):
-
     user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
 
     return render_to_response('MotionSensorServer/sensors.html', {
@@ -84,6 +82,7 @@ def get_detections_per_user(request):
         "items": detections
     }, RequestContext(request))
 
+
 @login_required()
 def get_detections_per_sensor(request, sensor_id):
     detections = SensorReading.objects.filter(sensor__exact=sensor_id).order_by("-date_from")
@@ -91,11 +90,13 @@ def get_detections_per_sensor(request, sensor_id):
         "items": detections
     }, RequestContext(request))
 
+
 @login_required
 def remove_sensor(request, sensor_id):
     sensor_r = get_object_or_404(Sensor, pk=sensor_id)
     sensor_r.delete()
     return HttpResponseRedirect(reverse('MotionSensorServer:sensors'))
+
 
 @login_required
 def switch_sensor_state(request, sensor_id):

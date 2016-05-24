@@ -22,16 +22,18 @@
         <td>
 
             <p>
-                    <a class="c_href" href="{% url 'MotionSensorServer:remove_sensor' item.id %}"
-               onclick="return confirm('Are you sure you want to delete this sensor?')">Delete</a>
+                <a class="c_href" href="{% url 'MotionSensorServer:remove_sensor' item.id %}"
+                   onclick="return confirm('Are you sure you want to delete this sensor?')">Delete</a>
 
-                    <a class="c_href" href="{% url 'MotionSensorServer:detections_sensor' item.id %}">Detections</a>
+                <a class="c_href" href="{% url 'MotionSensorServer:detections_sensor' item.id %}">Detections</a>
 
-                    {% if item.activated %}
-                        <a class="c_href" href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}" onclick="return confirm('Are you sure you want to deactivate this sensor?')">Deactivate</a>
-                    {% else %}
-                        <a class="c_href" href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}" onclick="return confirm('Are you sure you want to activate this sensor?')">Activate</a>
-                    {% endif %}
+                {% if item.activated %}
+                <a class="c_href" href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}"
+                   onclick="return confirm('Are you sure you want to deactivate this sensor?')">Deactivate</a>
+                {% else %}
+                <a class="c_href" href="{% url 'MotionSensorServer:switch_sensor_state' item.id %}"
+                   onclick="return confirm('Are you sure you want to activate this sensor?')">Activate</a>
+                {% endif %}
             </p>
         </td>
     </tr>
