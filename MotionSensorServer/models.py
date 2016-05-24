@@ -12,7 +12,8 @@ class Sensor(models.Model):
 
 class SensorReading(models.Model):
     sensor = models.ForeignKey(Sensor, null=False)
-    date = models.DateTimeField()
+    date_from = models.DateTimeField(null=False)
+    date_to = models.DateTimeField(null=False)
     detected = models.BooleanField(default=False)
 
 

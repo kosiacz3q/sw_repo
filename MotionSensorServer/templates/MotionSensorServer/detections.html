@@ -9,14 +9,18 @@
 </div>
 <table class="table">
     <tr>
-        <th>Sensor</th>
-        <th>Date</th>
+        <th>Sensor id</th>
+        <th>Sensor name</th>
+        <th>First measurement</th>
+        <th>Last measurement</th>
         <th>Detected</th>
     </tr>
     {% for item in items %}
     <tr>
-        <td>{{ item.sensor }}</td>
-        <td>{{ item.date }}</td>
+        <td>{{ item.sensor.id }}</td>
+        <td>{{ item.sensor.name }} </td>
+        <td>{{ item.date_from }}</td>
+        <td>{{ item.date_to }}</td>
         <td>{{ item.detected }}</td>
     </tr>
     {% endfor %}

@@ -3,8 +3,9 @@ from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
 from MotionSensorServer.models import Sensor, SensorReading, SensorForm, UserSensor
-import datetime
+from django.utils import timezone
 from django.core.urlresolvers import reverse
 
 
@@ -15,16 +16,36 @@ def index(request):
 
 
 @require_http_methods(["POST"])
+@csrf_exempt
 def reading(request, custom_id, is_motion_detected):
-    if Sensor.objects.get(custom_id=custom_id).exist():
+
+    motion_detected = (is_motion_detected == '1')
+
+    if Sensor.objects.filter(custom_id=custom_id).exists():
+
+        create_new = False
+
         sensor = Sensor.objects.get(custom_id=custom_id)
         if sensor.activated:
-            sensor_reading = SensorReading(
-                sensor=sensor,
-                date=datetime.datetime.now().time(),
-                detected=(is_motion_detected == 1))
 
-            sensor_reading.save()
+            if SensorReading.objects.filter(sensor=sensor).exists():
+                last_reading = SensorReading.objects.filter(sensor=sensor).latest('date_from')
+
+                last_reading.date_to = timezone.now()
+                last_reading.save()
+
+                create_new = (last_reading.detected != motion_detected)
+            else:
+                create_new = True
+
+            if create_new:
+                sensor_reading = SensorReading(
+                    sensor=sensor,
+                    date_from=timezone.now(),
+                    date_to=timezone.now(),
+                    detected=motion_detected)
+
+                sensor_reading.save()
     pass
 
 
@@ -56,7 +77,7 @@ def get_sensors(request):
 @login_required()
 def get_detections_per_user(request):
     user_sensors = [i.sensor for i in UserSensor.objects.filter(user__exact=request.user)]
-    detections = SensorReading.objects.order_by("date")
+    detections = SensorReading.objects.order_by("-date_from")
     detections = [i for i in detections if i.sensor in user_sensors]
     return render_to_response('MotionSensorServer/detections.html', {
         "items": detections
@@ -64,7 +85,7 @@ def get_detections_per_user(request):
 
 @login_required()
 def get_detections_per_sensor(request, sensor_id):
-    detections = SensorReading.objects.filter(sensor__exact=sensor_id).order_by("date")
+    detections = SensorReading.objects.filter(sensor__exact=sensor_id).order_by("-date_from")
     return render_to_response('MotionSensorServer/detections.html', {
         "items": detections
     }, RequestContext(request))
